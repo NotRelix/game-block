@@ -7,5 +7,14 @@
 </head>
 <body>
   <h1>Add Game</h1>
+  <form action="/games/add" method="post">
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" required>
+    <label for="description">Description</label>
+    <textarea name="description" id="description"></textarea>
+    <label for="price">Price</label>
+    <input type="text" name="price" id="price">
+    <button type="submit">Add Game</button>
+  </form>
 </body>
 </html>
