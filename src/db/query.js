@@ -9,11 +9,23 @@ async function getAllGames() {
   }
 }
 
-async function insertGame(name, description, price, image, developerId) {
+async function insertGame(
+  name,
+  description,
+  price,
+  image,
+  developerId,
+  releaseDate
+) {
   try {
     await pool.query(
-      "INSERT INTO games (name, description, price, image, developer_id) VALUES ($1, $2, $3, $4, $5);",
-      [name, description, price, image, developerId]
+      `
+      INSERT INTO games 
+        (name, description, price, image, developer_id, release_date) 
+      VALUES 
+        ($1, $2, $3, $4, $5, $6);
+    `,
+      [name, description, price, image, developerId, releaseDate]
     );
   } catch (err) {
     console.error("Insert game failed: ", err);
