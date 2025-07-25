@@ -1,0 +1,19 @@
+:root {
+  /* Background */
+  --card-bg: rgb(43, 43, 43);
+  --primary-bg: rgb(18, 18, 18);
+
+  /* Text */
+  --primary-text: rgb(245, 245, 245);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--primary-bg);
+  color: var(--primary-text);
+}

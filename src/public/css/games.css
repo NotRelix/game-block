@@ -1,0 +1,21 @@
+.container {
+  display: flex;
+  gap: 8px;
+}
+
+.card-container {
+  background-color: var(--card-bg);
+  padding: 8px;
+  width: 175px;
+  position: relative;
+}
+
+.image-container {
+  width: 100%;
+  height: 100%;
+}
+
+.image-container img {
+  width: 100%;
+  object-fit: cover;
+}

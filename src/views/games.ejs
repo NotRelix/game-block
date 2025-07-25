@@ -4,16 +4,23 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/games.css">
 </head>
 <body>
   <p>All games will be shown here</p>
   <a href="games/add">Add Game</a>
-  <% games.forEach((game) => { %>
-    <div>
-      <p><%= game.name %></p>
-      <p><%= game.description %></p>
-      <p><%= game.price %></p>
-    </div>       
-  <% }) %>
+  <div class="container">
+    <% games.forEach((game) => { %>
+      <div class="card-container">
+        <p><%= game.name %></p>
+        <p><%= game.description %></p>
+        <p><%= game.price %></p>
+        <div class="image-container">
+          <img src="data:image/jpeg;base64,<%= game.imageBase64 %>" alt="<%= game.name %> Image" />
+        </div>
+      </div>       
+    <% }) %>
+  </div>
 </body>
 </html>
