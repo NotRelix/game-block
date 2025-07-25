@@ -23,7 +23,6 @@ exports.gameAddGet = (req, res) => {
 exports.gameAddPost = async (req, res) => {
   const { name, description, price } = req.body;
   const image = req.file?.buffer || null;
-  console.log(image);
   await insertGame(name, description, price, image);
-  res.redirect("/games");
+  res.redirect("/");
 };

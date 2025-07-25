@@ -6,7 +6,7 @@ const storage = multer.memoryStorage();
 const upload = multer({ storage });
 
 gameRouter.get("/", gameController.gamesListGet);
-gameRouter.get("/add", gameController.gameAddGet);
-gameRouter.post("/add", upload.single("image"), gameController.gameAddPost);
+gameRouter.get("/games/add", gameController.gameAddGet);
+gameRouter.post("/games/add", upload.single("image"), gameController.gameAddPost);
 
 module.exports = gameRouter;
