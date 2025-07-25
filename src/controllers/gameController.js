@@ -15,7 +15,7 @@ exports.gamesListGet = async (req, res) => {
     };
   });
   res.render("games", {
-    title: "Games",
+    title: "Game Block",
     games: games,
   });
 };
@@ -32,7 +32,6 @@ exports.gameAddPost = async (req, res) => {
   const { name, description, price, developer, releaseDate } = req.body;
   const image = req.file?.buffer || null;
   let developerId;
-  const formattedReleaseDate = new Date(releaseDate);
 
   const result = await getDeveloper(developer);
   if (result.length > 0) {

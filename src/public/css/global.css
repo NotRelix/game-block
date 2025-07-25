@@ -2,14 +2,18 @@
 
 :root {
   /* Background */
+  --button-bg: rgb(24, 24, 24);
   --card-bg: rgb(43, 43, 43);
+  --input-bg: rgb(21, 21, 21);
   --primary-bg: rgb(18, 18, 18);
 
   /* Border */
   --primary-border: rgb(31, 31, 31);
+  --input-border: rgb(27, 27, 27);
 
   /* Text */
   --primary-text: rgb(226, 226, 226);
+  --muted-text: rgb(144, 144, 144);
 }
 
 * {
@@ -46,5 +50,6 @@ nav {
 }
 
 main {
-  padding-top: 50px;
+  padding: 68px 12px;
+  height: 100vh;
 }

@@ -5,31 +5,34 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
   <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/addGame.css">
 </head>
 <body>
   <%- include('partials/navbar') %>
   <main>
-    <h1>Add Game</h1>
-    <form action="/games/add" method="post" enctype="multipart/form-data">
-      <label for="name">Name</label>
-      <input type="text" name="name" id="name" required>
-      <label for="description">Description</label>
-      <textarea name="description" id="description"></textarea>
-      <label for="price">Price</label>
-      <input type="text" name="price" id="price">
-      <label for="developer">Developer</label>
-      <input type="text" name="developer" id="developer" list="developerList">
-      <datalist id="developerList">
-        <% developers.forEach((developer) => { %>
-          <option value="<%= developer.developer %>">
-        <% }) %>
-      </datalist>
-      <label for="releaseDate">Release Date</label>
-      <input type="date" name="releaseDate" id="releaseDate">
-      <label for="image">Image</label>
-      <input type="file" name="image" id="image" accept="image/*">
-      <button type="submit">Add Game</button>
-    </form>
+    <div class="container">
+      <h1 class="header">Add Game</h1>
+      <form action="/games/add" method="post" enctype="multipart/form-data">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" required>
+        <label for="description">Description</label>
+        <textarea name="description" id="description"></textarea>
+        <label for="price">Price</label>
+        <input type="text" name="price" id="price">
+        <label for="developer">Developer</label>
+        <input type="text" name="developer" id="developer" list="developerList">
+        <datalist id="developerList">
+          <% developers.forEach((developer) => { %>
+            <option value="<%= developer.developer %>">
+          <% }) %>
+        </datalist>
+        <label for="releaseDate">Release Date</label>
+        <input type="date" name="releaseDate" id="releaseDate">
+        <label for="image">Image</label>
+        <input type="file" name="image" id="image" accept="image/*">
+        <button type="submit">Add Game</button>
+      </form>
+    </div>
   </main>
 </body>
 </html>

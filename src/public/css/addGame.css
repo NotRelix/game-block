@@ -1,0 +1,62 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 400px;
+  width: 100%;
+}
+
+label {
+  color: var(--muted-text);
+}
+
+input,
+textarea,
+input::file-selector-button {
+  padding: 8px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--primary-text);
+}
+
+input::file-selector-button {
+  margin-right: 12px;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1)
+            brightness(50%)
+            saturate(10000%)
+            hue-rotate(180deg);
+}
+
+datalist {
+  border: 0.5px solid #CCCCCC;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 50px;
+  max-height: 100px;
+}
+
+button {
+  cursor: pointer;
+  margin-top: 8px;
+  padding: 12px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--primary-text);
+}
+
+.header {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
