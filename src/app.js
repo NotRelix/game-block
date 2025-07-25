@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const path = require("node:path");
 const indexRouter = require("./routes/indexRouter");
+require("dotenv").config();
 
 app.use(express.urlencoded({ extended: true }));
 app.set("views", path.join(__dirname, "views"));
