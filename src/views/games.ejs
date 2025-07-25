@@ -8,5 +8,12 @@
 <body>
   <p>All games will be shown here</p>
   <a href="games/add">Add Game</a>
+  <% games.forEach((game) => { %>
+    <div>
+      <p><%= game.name %></p>
+      <p><%= game.description %></p>
+      <p><%= game.price %></p>
+    </div>       
+  <% }) %>
 </body>
 </html>

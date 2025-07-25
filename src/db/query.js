@@ -1,5 +1,14 @@
 const pool = require("./pool");
 
+async function getAllGames() {
+  try {
+    const { rows } = await pool.query("SELECT * FROM games;");
+    return rows;
+  } catch (err) {
+    console.error("Get all games failed: ", err);
+  }
+}
+
 async function insertGame(name, description, price) {
   try {
     await pool.query(
@@ -12,5 +21,6 @@ async function insertGame(name, description, price) {
 }
 
 module.exports = {
+  getAllGames,
   insertGame,
 };

@@ -1,13 +1,14 @@
-const { insertGame } = require("../db/query");
+const { insertGame, getAllGames } = require("../db/query");
 
-exports.gamesListGet = (req, res) => {
+exports.gamesListGet = async (req, res) => {
+  const games = await getAllGames();
   res.render("games", {
     title: "Games",
+    games: games,
   });
 };
 
 exports.gameAddGet = (req, res) => {
-  console.log(process.env.CONNECTION_STRING);
   res.render("addGame", {
     title: "Add Game",
   });
