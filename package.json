@@ -1,0 +1,24 @@
+{
+  "name": "game-block",
+  "version": "1.0.0",
+  "description": "Find your favorite games here at Game Block",
+  "main": "src/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NotRelix/game-block.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NotRelix/game-block/issues"
+  },
+  "homepage": "https://github.com/NotRelix/game-block#readme",
+  "dependencies": {
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}
