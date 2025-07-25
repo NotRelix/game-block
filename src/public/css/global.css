@@ -4,8 +4,11 @@
   /* Background */
   --button-bg: rgb(24, 24, 24);
   --card-bg: rgb(43, 43, 43);
-  --input-bg: rgb(21, 21, 21);
+  --input-bg: rgb(20, 20, 20);
   --primary-bg: rgb(18, 18, 18);
+
+  /* Hover */
+  --button-hover: rgba(24, 24, 24, 0.616);
 
   /* Border */
   --primary-border: rgb(31, 31, 31);
