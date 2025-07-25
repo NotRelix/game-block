@@ -18,7 +18,12 @@
       <label for="price">Price</label>
       <input type="text" name="price" id="price">
       <label for="developer">Developer</label>
-      <input type="text" name="developer" id="developer">
+      <input type="text" name="developer" id="developer" list="developerList">
+      <datalist id="developerList">
+        <% developers.forEach((developer) => { %>
+          <option value="<%= developer.developer %>">
+        <% }) %>
+      </datalist>
       <label for="releaseDate">Release Date</label>
       <input type="text" name="releaseDate" id="releaseDate">
       <label for="image">Image</label>
