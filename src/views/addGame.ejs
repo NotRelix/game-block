@@ -6,6 +6,7 @@
   <title><%= title %></title>
   <link rel="stylesheet" href="/css/global.css">
   <link rel="stylesheet" href="/css/addGame.css">
+  <script src="/js/categories.js" defer></script>
 </head>
 <body>
   <%- include('partials/navbar') %>
@@ -30,6 +31,12 @@
         <input type="date" name="releaseDate" id="releaseDate">
         <label for="image">Image</label>
         <input type="file" name="image" id="image" accept="image/*" required>
+        <label for="category">Category</label>
+        <input type="text" placeholder="Type and press Enter" id="category">
+        <input type="hidden" name="categories" id="categories-hidden">
+        <div class="category-container">
+
+        </div>
         <button type="submit">Add Game</button>
       </form>
     </div>
