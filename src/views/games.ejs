@@ -11,7 +11,10 @@
   <%- include('partials/navbar') %>
   <main>
     <div class="main-container">
-      <a class="add-game" href="games/add">Add Game</a>
+      <div class="top-container">
+        <%- include('partials/searchBar') %>
+        <a class="add-game" href="games/add">Add Game</a>
+      </div>
       <h1>Discover</h1>
       <div class="container">
         <% games.forEach((game) => { %>
