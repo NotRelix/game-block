@@ -3,10 +3,14 @@ const pool = require("./pool");
 async function getAllGames() {
   try {
     const { rows } = await pool.query("SELECT * FROM games;");
+    if (rows.length > 0) {
+      return rows;
+    }
     return rows;
   } catch (err) {
     console.error("Get all games failed: ", err);
   }
+  return [];
 }
 
 async function insertGame(

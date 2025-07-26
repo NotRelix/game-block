@@ -10,19 +10,23 @@
 <body>
   <%- include('partials/navbar') %>
   <main>
-    <p>All games will be shown here</p>
-    <a href="games/add">Add Game</a>
-    <div class="container">
-      <% games.forEach((game) => { %>
-        <div class="card-container">
-          <div class="image-container">
-            <img src="data:image/jpeg;base64,<%= game.imageBase64 %>" alt="<%= game.name %> Image" />
-          </div>
-          <p><%= game.name %></p>
-          <p><%= game.description %></p>
-          <p><%= game.price %></p>
-        </div>       
-      <% }) %>
+    <div class="main-container">
+      <a class="add-game" href="games/add">Add Game</a>
+      <div class="container">
+        <% games.forEach((game) => { %>
+          <div class="card-container">
+            <div class="image-container">
+              <img src="data:image/jpeg;base64,<%= game.imageBase64 %>" alt="<%= game.name %> Image" />
+            </div>
+            <p class="game-name"><%= game.name %></p>
+            <% if (game.price == 0) { %>
+              <p class="game-price">Free</p>
+            <% } else { %>
+              <p class="game-price">$<%= game.price %></p>
+            <% } %>
+          </div>       
+        <% }) %>
+      </div>
     </div>
   </main>
 </body>

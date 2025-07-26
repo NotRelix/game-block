@@ -54,5 +54,5 @@ nav {
 
 main {
   padding: 68px 12px;
-  height: 100vh;
+  min-height: 100vh;
 }
