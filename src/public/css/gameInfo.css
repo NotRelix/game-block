@@ -36,6 +36,11 @@ main {
   flex: 1;
 }
 
+.game-name {
+  text-align: center;
+  padding: 64px 0;
+}
+
 .image-container {
   aspect-ratio: 5 / 4;
   max-width: 600px;

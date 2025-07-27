@@ -14,8 +14,23 @@ async function getAllGames() {
 }
 
 async function getGame(id) {
-  const { rows } = await pool.query("SELECT * FROM games WHERE id = $1", [id]);
-  return rows[0];
+  const gameResult = await pool.query("SELECT * FROM games WHERE id = $1", [
+    id,
+  ]);
+  const categoryResult = await pool.query(
+    `
+    SELECT categories.name
+    FROM game_category 
+    JOIN categories ON game_category.category_id = categories.id 
+    WHERE game_category.game_id = $1
+    ORDER BY categories.name
+    `,
+    [id]
+  );
+  return {
+    game: gameResult.rows[0],
+    categories: categoryResult.rows.map((row) => row.name),
+  };
 }
 
 async function insertGame(

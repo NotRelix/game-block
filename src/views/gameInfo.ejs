@@ -21,11 +21,13 @@
           <img class="main-image" src="data:image/jpeg;base64,<%= game.imageBase64 %>" alt="<%= game.name %> Image">
         </div>
         <div class="categories">
-          <!-- TODO: add categories -->
+          <% game.categories.forEach((category) => { %>
+            <span><%= category %></span>
+          <% }) %>
         </div>
       </div>
       <div class="right-container">
-        <h1><%= game.name %></h1>
+        <h1 class="game-name"><%= game.name %></h1>
         <h1 class="price">$<%= game.price %></h1>
         <div class="buttons">
           <button class="buy-now">Buy Now</button>
