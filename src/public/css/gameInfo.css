@@ -108,12 +108,13 @@ main {
 
 .buy-now,
 .add-to-cart,
-.add-to-wishlist {
+.edit-info {
   padding: 12px;
   border-radius: 8px;
   border: none;
   font-weight: 500;
   cursor: pointer;
+  font-size: 14px;
 }
 
 .buy-now {
@@ -121,9 +122,14 @@ main {
 }
 
 .add-to-cart,
-.add-to-wishlist {
+.edit-info {
   background-color: var(--other-btn-bg);
   color: var(--primary-text);
+}
+
+.edit-info {
+  text-align: center;
+  text-decoration: none;
 }
 
 @media (max-width: 1080px) {

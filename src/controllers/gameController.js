@@ -84,3 +84,9 @@ exports.browseListGet = async (req, res) => {
     games: games,
   });
 };
+
+exports.gameEditGet = async (req, res) => {
+  res.render("edit", {
+    title: "Edit Game",
+  });
+};

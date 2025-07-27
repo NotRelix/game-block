@@ -10,5 +10,6 @@ gameRouter.get("/games/add", gameController.gameAddGet);
 gameRouter.post("/games/add", upload.single("image"), gameController.gameAddPost);
 gameRouter.get("/games/:id", gameController.gameInfoGet);
 gameRouter.get("/browse", gameController.browseListGet);
+gameRouter.get("/games/:id/edit", gameController.gameEditGet);
 
 module.exports = gameRouter;
