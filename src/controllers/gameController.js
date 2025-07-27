@@ -57,8 +57,11 @@ exports.gameAddPost = async (req, res) => {
 
 exports.gameInfoGet = async (req, res) => {
   const id = req.params.id;
-  const game = await getGame(id);
-  console.log(game);
+  let game = await getGame(id);
+  game = {
+    ...game,
+    imageBase64: game.image ? game.image.toString("base64") : null
+  }
   res.render("gameInfo", {
     title: game.name,
     game: game,

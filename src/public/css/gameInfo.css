@@ -1,0 +1,98 @@
+main {
+  display: flex;
+  flex-direction: column;
+  max-width: 910.133px;
+  width: 100%;
+  justify-self: center;
+  gap: 22px;
+  padding: 68px 0;
+}
+
+.top-container {
+  display: flex;
+}
+
+.add-game {
+  text-decoration: none;
+  padding: 8px 16px;
+  cursor: pointer;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--primary-text);
+  width: fit-content;
+  margin-left: auto;
+}
+
+.add-game:hover {
+  background-color: var(--button-hover);
+}
+
+.game-info {
+  display: flex;
+  gap: 32px;
+}
+
+.left-container {
+  flex: 1;
+}
+
+.image-container {
+  aspect-ratio: 5 / 4;
+  max-width: 600px;
+  width: 100%;
+  overflow: hidden;
+}
+
+.main-image {
+  width: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.right-container {
+  display: flex;
+  gap: 8px;
+  width: 300px;
+  flex-direction: column;
+}
+
+.price {
+  font-size: 20px;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.buy-now,
+.add-to-cart,
+.add-to-wishlist {
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 500;
+}
+
+.buy-now {
+  background-color: var(--buy-now-btn-bg);
+}
+
+.add-to-cart,
+.add-to-wishlist {
+  background-color: var(--other-btn-bg);
+  color: var(--primary-text);
+}
+
+@media (max-width: 1080px) {
+  main {
+    max-width: 100%;
+    padding: 68px 24px;
+  }
+
+  .image-container {
+    max-width: 100%;
+  }
+}

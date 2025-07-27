@@ -6,6 +6,8 @@
   --card-bg: rgb(43, 43, 43);
   --input-bg: rgb(25, 25, 25);
   --primary-bg: rgb(18, 18, 18);
+  --buy-now-btn-bg: rgb(66, 151, 255);
+  --other-btn-bg: rgb(38, 38, 38);
 
   /* Hover */
   --button-hover: rgba(24, 24, 24, 0.616);

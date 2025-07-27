@@ -3,9 +3,37 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/gameInfo.css">
   <title><%= title %></title>
 </head>
 <body>
-  <h1>Game Info</h1>
+  <%- include('partials/navbar') %>
+  <main>
+    <div class="top-container">
+      <%- include('partials/searchBar') %>
+      <a class="add-game" href="add">Add Game</a>
+    </div>
+    <h1><%= game.name %></h1>
+    <div class="game-info">
+      <div class="left-container">
+        <div class="image-container">
+          <img class="main-image" src="data:image/jpeg;base64,<%= game.imageBase64 %>" alt="<%= game.name %> Image">
+        </div>
+        <div class="categories">
+          <!-- TODO: add categories -->
+        </div>
+      </div>
+      <div class="right-container">
+        <h1><%= game.name %></h1>
+        <h1 class="price">$<%= game.price %></h1>
+        <div class="buttons">
+          <button class="buy-now">Buy Now</button>
+          <button class="add-to-cart">Add to Cart</button>
+          <button class="add-to-wishlist">Add to Wishlist</button>
+        </div>
+      </div>
+    </div>
+  </main>
 </body>
 </html>
