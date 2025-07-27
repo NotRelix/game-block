@@ -11,6 +11,7 @@
 
   /* Hover */
   --button-hover: rgba(24, 24, 24, 0.616);
+  --other-btn-bg-hover: rgb(31, 31, 31);
 
   /* Border */
   --primary-border: rgb(31, 31, 31);
@@ -64,7 +65,8 @@ main {
 }
 
 #search-bar {
-  width: 250px;
+  max-width: 300px;
+  width: 100%;
   padding: 0 12px;
   border-radius: 16px;
   background-color: var(--input-bg);

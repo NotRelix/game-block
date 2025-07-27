@@ -10,6 +10,7 @@ main {
 
 .top-container {
   display: flex;
+  gap: 16px;
 }
 
 .add-game {
@@ -25,6 +26,10 @@ main {
 
 .add-game:hover {
   background-color: var(--button-hover);
+}
+
+.add-game-btn {
+  display: none;
 }
 
 .game-info {
@@ -45,7 +50,7 @@ main {
 }
 
 .image-container {
-  aspect-ratio: 5 / 4;
+  aspect-ratio: 6 / 4;
   max-width: 600px;
   width: 100%;
   overflow: hidden;
@@ -130,5 +135,48 @@ main {
 
   .image-container {
     max-width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .game-info {
+    flex-direction: column;
+  }
+
+  .game-name {
+    display: none;
+  }
+
+  .right-container {
+    width: 100%;
+  }
+
+  .price {
+    text-align: center;
+  }
+
+  .add-game {
+    display: none;
+  }
+
+  .add-game-btn {
+    margin-left: auto;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    aspect-ratio: 1 / 1;
+    height: 50%;
+    color: var(--primary-text);
+    text-decoration: none;
+    font-size: 20px;
+    background-color: var(--other-btn-bg);
+    border: none;
+    border-radius: 100%;
+    padding: 12px;
+    cursor: pointer;
+  }
+
+  .add-game-btn:hover {
+    background-color: var(--other-btn-bg-hover);
   }
 }
