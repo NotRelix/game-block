@@ -6,6 +6,7 @@ const {
   getDeveloper,
   getGame,
   getGameFromQuery,
+  getDeveloperById,
 } = require("../db/query");
 
 exports.gamesListGet = async (req, res) => {
@@ -86,7 +87,20 @@ exports.browseListGet = async (req, res) => {
 };
 
 exports.gameEditGet = async (req, res) => {
+  const { id } = req.params;
+  let { game, categories } = await getGame(id);
+  const developer = await getDeveloperById(game.developer_id);
+  game = {
+    ...game,
+    categories: categories,
+    developer: developer[0].developer,
+    imageBase64: game.image ? game.image.toString("base64") : null,
+  };
+  console.log(game);
+  const developers = await getAllDevelopers();
   res.render("edit", {
     title: "Edit Game",
+    developers: developers,
+    game: game,
   });
 };

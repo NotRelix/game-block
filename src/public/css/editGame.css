@@ -1,0 +1,106 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-width: 400px;
+  width: 100%;
+}
+
+label {
+  color: var(--muted-text);
+}
+
+input,
+textarea,
+input::file-selector-button {
+  padding: 8px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--primary-text);
+}
+
+input::file-selector-button {
+  margin-right: 12px;
+}
+
+::-webkit-calendar-picker-indicator {
+  filter: invert(1)
+            brightness(50%)
+            saturate(10000%)
+            hue-rotate(180deg);
+}
+
+datalist {
+  border: 0.5px solid #CCCCCC;
+}
+
+textarea {
+  resize: vertical;
+  min-height: 50px;
+  max-height: 100px;
+}
+
+button {
+  cursor: pointer;
+  margin-top: 8px;
+  padding: 12px;
+  background-color: var(--input-bg);
+  border: 1px solid var(--input-border);
+  color: var(--primary-text);
+}
+
+button:hover,
+input::file-selector-button:hover {
+  background-color: var(--button-hover);
+}
+
+.header {
+  font-size: 20px;
+  margin-bottom: 16px;
+}
+
+.category-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin-top: 8px;
+}
+
+.category-tag {
+  position: relative;
+  display: flex;
+}
+
+.category-remove {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: absolute;
+  border-radius: 100%;
+  top: -12px;
+  right: -8px;
+  background-color: rgb(187, 36, 36);
+  padding: 8px;
+  width: 8px;
+  height: 8px;
+  border: none;
+}
+
+.category-remove:hover {
+  background-color: rgb(164, 34, 34);
+}
+
+.category-icon {
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: var(--other-btn-bg);
+}

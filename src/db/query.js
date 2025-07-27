@@ -86,6 +86,13 @@ async function getDeveloper(developer) {
   return rows;
 }
 
+async function getDeveloperById(id) {
+  const { rows } = await pool.query("SELECT * FROM developers WHERE id = $1", [
+    id,
+  ]);
+  return rows;
+}
+
 async function insertDeveloper(developer) {
   const result = await pool.query(
     "INSERT INTO developers (developer) VALUES ($1) RETURNING id",
@@ -124,5 +131,6 @@ module.exports = {
   insertGame,
   getAllDevelopers,
   getDeveloper,
+  getDeveloperById,
   insertDeveloper,
 };

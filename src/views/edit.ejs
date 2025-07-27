@@ -4,8 +4,42 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title><%= title %></title>
+  <link rel="stylesheet" href="/css/global.css">
+  <link rel="stylesheet" href="/css/editGame.css">
+  <script src="/js/categories.js" defer></script>
 </head>
 <body>
-  <h1>Edit Page</h1>
+  <%- include("partials/navbar") %>
+  <main>
+    <div class="container">
+      <h1 class="header">Edit Game</h1>
+      <form action="/games/add" method="post" enctype="multipart/form-data">
+        <label for="name">Name</label>
+        <input type="text" name="name" id="name" value="<%= game.name %>" required>
+        <label for="description">Description</label>
+        <textarea name="description" id="description"><%= game.description %></textarea>
+        <label for="price">Price</label>
+        <input type="text" name="price" id="price" value="<%= game.price %>">
+        <label for="developer">Developer</label>
+        <input type="text" name="developer" id="developer" list="developerList" value="<%= game.developer %>">
+        <datalist id="developerList">
+          <% developers.forEach((developer) => { %>
+            <option value="<%= developer.developer %>">
+          <% }) %>
+        </datalist>
+        <label for="releaseDate">Release Date</label>
+        <input type="date" name="releaseDate" id="releaseDate" value="<%= game.release_date ? game.release_date.toISOString().split('T')[0] : '' %>">
+        <label for="image">Image</label>
+        <input type="file" name="image" id="image" accept="image/*" value="<%= game.image %>" required>
+        <label for="category">Category</label>
+        <input type="text" placeholder="Type and press Enter" id="category">
+        <input type="hidden" name="categories" id="categories-hidden">
+        <div class="category-container">
+          
+        </div>
+        <button type="submit">Add Game</button>
+      </form>
+    </div>
+  </main>
 </body>
 </html>
