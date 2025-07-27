@@ -5,6 +5,7 @@ const {
   insertDeveloper,
   getDeveloper,
   getGame,
+  getGameFromQuery,
 } = require("../db/query");
 
 exports.gamesListGet = async (req, res) => {
@@ -70,7 +71,16 @@ exports.gameInfoGet = async (req, res) => {
 };
 
 exports.browseListGet = async (req, res) => {
+  const { searchBar } = req.query;
+  let games = await getGameFromQuery(searchBar);
+  games = games.map((game) => {
+    return {
+      ...game,
+      imageBase64: game.image ? game.image.toString("base64") : null,
+    };
+  });
   res.render("browse", {
     title: "Browse Games",
+    games: games,
   });
 };

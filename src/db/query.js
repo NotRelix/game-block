@@ -33,6 +33,13 @@ async function getGame(id) {
   };
 }
 
+async function getGameFromQuery(search) {
+  const { rows } = await pool.query("SELECT * FROM games WHERE name ILIKE $1", [
+    `%${search}%`,
+  ]);
+  return rows;
+}
+
 async function insertGame(
   name,
   description,
@@ -113,6 +120,7 @@ async function insertWithCategories(gameId, categories) {
 module.exports = {
   getAllGames,
   getGame,
+  getGameFromQuery,
   insertGame,
   getAllDevelopers,
   getDeveloper,
