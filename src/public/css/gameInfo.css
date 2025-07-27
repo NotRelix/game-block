@@ -34,6 +34,9 @@ main {
 
 .left-container {
   flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .game-name {
@@ -46,12 +49,39 @@ main {
   max-width: 600px;
   width: 100%;
   overflow: hidden;
+  border-radius: 8px;
 }
 
 .main-image {
   width: 100%;
   object-fit: cover;
   display: block;
+}
+
+.category-container {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.category-header {
+  color: var(--muted-text);
+}
+
+.categories {
+  display: flex;
+  gap: 8px;
+}
+
+.category {
+  padding: 6px;
+  border-radius: 4px;
+  font-size: 14px;
+  background-color: var(--other-btn-bg);
+}
+
+.description-container p {
+  line-height: 1.5;
 }
 
 .right-container {
@@ -79,6 +109,7 @@ main {
   border-radius: 8px;
   border: none;
   font-weight: 500;
+  cursor: pointer;
 }
 
 .buy-now {

@@ -20,15 +20,29 @@
         <div class="image-container">
           <img class="main-image" src="data:image/jpeg;base64,<%= game.imageBase64 %>" alt="<%= game.name %> Image">
         </div>
-        <div class="categories">
-          <% game.categories.forEach((category) => { %>
-            <span><%= category %></span>
-          <% }) %>
+        <% if (game.categories.length !== 0) { %>
+          <div class="category-container">
+            <span class="category-header">Category</span>
+            <div class="categories">
+              <% game.categories.forEach((category) => { %>
+                <span class="category"><%= category %></span>
+              <% }) %>
+            </div>
+          </div>
+        <% } %>
+        <div class="description-container">
+          <p><%= game.description %></p>
         </div>
       </div>
       <div class="right-container">
         <h1 class="game-name"><%= game.name %></h1>
-        <h1 class="price">$<%= game.price %></h1>
+        <h1 class="price">
+          <% if (game.price == 0) { %>
+            Free
+          <% } else { %>
+            $<%= game.price %>
+          <% } %>
+        </h1>
         <div class="buttons">
           <button class="buy-now">Buy Now</button>
           <button class="add-to-cart">Add to Cart</button>
