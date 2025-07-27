@@ -13,6 +13,11 @@ async function getAllGames() {
   return [];
 }
 
+async function getGame(id) {
+  const { rows } = await pool.query("SELECT * FROM games WHERE id = $1", [id]);
+  return rows[0];
+}
+
 async function insertGame(
   name,
   description,
@@ -92,6 +97,7 @@ async function insertWithCategories(gameId, categories) {
 
 module.exports = {
   getAllGames,
+  getGame,
   insertGame,
   getAllDevelopers,
   getDeveloper,

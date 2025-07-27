@@ -86,9 +86,9 @@ input::file-selector-button:hover {
   position: absolute;
   border-radius: 100%;
   top: -14px;
-  right: -18px;
+  right: -14px;
   background-color: rgb(187, 36, 36);
-  padding: 10px;
+  padding: 8px;
   width: 8px;
   height: 8px;
   border: none;

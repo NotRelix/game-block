@@ -8,5 +8,6 @@ const upload = multer({ storage });
 gameRouter.get("/", gameController.gamesListGet);
 gameRouter.get("/games/add", gameController.gameAddGet);
 gameRouter.post("/games/add", upload.single("image"), gameController.gameAddPost);
+gameRouter.get("/games/:id", gameController.gameInfoGet);
 
 module.exports = gameRouter;

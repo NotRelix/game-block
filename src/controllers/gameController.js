@@ -4,6 +4,7 @@ const {
   getAllDevelopers,
   insertDeveloper,
   getDeveloper,
+  getGame,
 } = require("../db/query");
 
 exports.gamesListGet = async (req, res) => {
@@ -29,7 +30,8 @@ exports.gameAddGet = async (req, res) => {
 };
 
 exports.gameAddPost = async (req, res) => {
-  const { name, description, price, developer, releaseDate, categories } = req.body;
+  const { name, description, price, developer, releaseDate, categories } =
+    req.body;
   const image = req.file?.buffer || null;
   let developerId;
   const filteredCategories = categories.split(",");
@@ -41,6 +43,24 @@ exports.gameAddPost = async (req, res) => {
   } else {
     developerId = await insertDeveloper(developer);
   }
-  await insertGame(name, description, price, image, developerId, releaseDate, filteredCategories);
+  await insertGame(
+    name,
+    description,
+    price,
+    image,
+    developerId,
+    releaseDate,
+    filteredCategories
+  );
   res.redirect("/");
+};
+
+exports.gameInfoGet = async (req, res) => {
+  const id = req.params.id;
+  const game = await getGame(id);
+  console.log(game);
+  res.render("gameInfo", {
+    title: game.name,
+    game: game,
+  });
 };

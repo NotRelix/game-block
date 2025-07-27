@@ -35,6 +35,10 @@
   object-fit: cover;
 }
 
+.image-container img:hover {
+  filter: brightness(0.9);
+}
+
 main {
   display: flex;
   flex-direction: column;
