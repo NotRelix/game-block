@@ -21,7 +21,6 @@ main {
   border: 1px solid var(--input-border);
   color: var(--primary-text);
   width: fit-content;
-  margin-left: auto;
 }
 
 .add-game:hover {

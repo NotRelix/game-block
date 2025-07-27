@@ -68,3 +68,9 @@ exports.gameInfoGet = async (req, res) => {
     game: game,
   });
 };
+
+exports.browseListGet = async (req, res) => {
+  res.render("browse", {
+    title: "Browse Games",
+  });
+};
