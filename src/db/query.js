@@ -85,7 +85,8 @@ async function editGameWithoutImage(
       [name, description, price, developerId, releaseDate, id]
     );
 
-    await pool.query(`
+    await pool.query(
+      `
       DELETE FROM game_category
       WHERE game_id = $1 
       AND category_id IN (
@@ -93,7 +94,9 @@ async function editGameWithoutImage(
         JOIN categories ON game_category.category_id = categories.id
         WHERE game_id = $1
       )
-    `, [id])
+    `,
+      [id]
+    );
 
     await insertWithCategories(id, categories);
   } catch (err) {
@@ -159,6 +162,10 @@ async function insertWithCategories(gameId, categories) {
   }
 }
 
+async function deleteGame(id) {
+  await pool.query("DELETE FROM games WHERE id = $1", [id]);
+}
+
 module.exports = {
   getAllGames,
   getGame,
@@ -169,4 +176,5 @@ module.exports = {
   getDeveloper,
   getDeveloperById,
   insertDeveloper,
+  deleteGame,
 };

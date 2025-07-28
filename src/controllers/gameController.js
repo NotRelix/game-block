@@ -8,6 +8,7 @@ const {
   getGameFromQuery,
   getDeveloperById,
   editGameWithoutImage,
+  deleteGame,
 } = require("../db/query");
 
 exports.gamesListGet = async (req, res) => {
@@ -126,4 +127,10 @@ exports.gameEditPost = async (req, res) => {
     filteredCategories
   );
   res.redirect(`/games/${id}`);
+}
+
+exports.gameDeletePost = async (req, res) => {
+  const { id } = req.params;
+  await deleteGame(id);
+  res.redirect("/");
 }

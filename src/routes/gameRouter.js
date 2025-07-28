@@ -12,5 +12,6 @@ gameRouter.get("/games/:id", gameController.gameInfoGet);
 gameRouter.get("/browse", gameController.browseListGet);
 gameRouter.get("/games/:id/edit", gameController.gameEditGet);
 gameRouter.post("/games/:id/edit", gameController.gameEditPost);
+gameRouter.post("/games/:id/delete", gameController.gameDeletePost);
 
 module.exports = gameRouter;
