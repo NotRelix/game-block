@@ -21,7 +21,7 @@
         <div class="image-container">
           <img class="main-image" src="data:image/jpeg;base64,<%= game.imageBase64 %>" alt="<%= game.name %> Image">
         </div>
-        <% if (game.categories.length !== 0) { %>
+        <% if (game.categories.length !== 0 && game.categories[0] !== '') { %>
           <div class="category-container">
             <span class="category-header">Category</span>
             <div class="categories">

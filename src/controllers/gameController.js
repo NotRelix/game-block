@@ -65,6 +65,7 @@ exports.gameInfoGet = async (req, res) => {
     categories: categories,
     imageBase64: game.image ? game.image.toString("base64") : null,
   };
+  console.log(game.categories);
   res.render("gameInfo", {
     title: game.name,
     game: game,
@@ -108,7 +109,7 @@ exports.gameEditPost = async (req, res) => {
   const { id } = req.params;
   const { name, description, price, developer, releaseDate, categories } =
     req.body;
-  const filteredCategories = categories.split(",");
+  const filteredCategories = categories[0] !== '' ? categories.split(",") : "";
   const result = await getDeveloper(developer);
   let developerId;
   if (result.length > 0) {
@@ -125,5 +126,5 @@ exports.gameEditPost = async (req, res) => {
     releaseDate,
     filteredCategories
   );
-  res.redirect("/");
+  res.redirect(`/games/${id}`);
 }

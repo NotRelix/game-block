@@ -2,7 +2,7 @@ const pool = require("./pool");
 
 async function getAllGames() {
   try {
-    const { rows } = await pool.query("SELECT * FROM games;");
+    const { rows } = await pool.query("SELECT * FROM games ORDER BY id;");
     if (rows.length > 0) {
       return rows;
     }
