@@ -96,7 +96,6 @@ exports.gameEditGet = async (req, res) => {
     developer: developer[0].developer,
     imageBase64: game.image ? game.image.toString("base64") : null,
   };
-  console.log(game);
   const developers = await getAllDevelopers();
   res.render("edit", {
     title: "Edit Game",

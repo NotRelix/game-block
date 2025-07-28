@@ -33,9 +33,13 @@
         <input type="file" name="image" id="image" accept="image/*" value="<%= game.image %>" required>
         <label for="category">Category</label>
         <input type="text" placeholder="Type and press Enter" id="category">
-        <input type="hidden" name="categories" id="categories-hidden">
+        <input type="hidden" name="categories" id="categories-hidden" value="<%= game.categories.join(",") %>">
         <div class="category-container">
-          
+          <% game.categories.forEach((category) => { %>
+            <div class="category-tag">
+              <span class="category-icon"><%= category %></span> <button class="category-remove" type="button" data-index="${index}">-</button>
+            </div>
+          <% }) %>
         </div>
         <button type="submit">Add Game</button>
       </form>
