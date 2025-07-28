@@ -83,6 +83,11 @@ main {
 }
 
 @media (max-width: 1080px) {
+  main {
+    max-width: 100%;
+    padding: 68px 24px;
+  }
+
   .main-container {
     width: 100%;
   }
