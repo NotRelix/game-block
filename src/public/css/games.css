@@ -1,3 +1,10 @@
+main {
+  width: 100%;
+  max-width: 910.133px;
+  justify-self: center;
+  padding: 68px 0;
+}
+
 .main-container {
   display: flex;
   flex-direction: column;
