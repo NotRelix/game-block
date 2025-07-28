@@ -65,7 +65,6 @@ exports.gameInfoGet = async (req, res) => {
     categories: categories,
     imageBase64: game.image ? game.image.toString("base64") : null,
   };
-  console.log(game.categories);
   res.render("gameInfo", {
     title: game.name,
     game: game,

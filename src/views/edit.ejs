@@ -19,16 +19,16 @@
         <label for="description">Description</label>
         <textarea name="description" id="description"><%= game.description %></textarea>
         <label for="price">Price</label>
-        <input type="text" name="price" id="price" value="<%= game.price %>">
+        <input type="text" name="price" id="price" value="<%= game.price %>" required>
         <label for="developer">Developer</label>
-        <input type="text" name="developer" id="developer" list="developerList" value="<%= game.developer %>">
+        <input type="text" name="developer" id="developer" list="developerList" value="<%= game.developer %>" required>
         <datalist id="developerList">
           <% developers.forEach((developer) => { %>
             <option value="<%= developer.developer %>">
           <% }) %>
         </datalist>
         <label for="releaseDate">Release Date</label>
-        <input type="date" name="releaseDate" id="releaseDate" value="<%= game.release_date ? game.release_date.toISOString().split('T')[0] : '' %>">
+        <input type="date" name="releaseDate" id="releaseDate" value="<%= game.release_date ? game.release_date.toISOString().split('T')[0] : '' %>" required>
         <label for="category">Category</label>
         <input type="text" placeholder="Type and press Enter" id="category">
         <input type="hidden" name="categories" id="categories-hidden" value="<%= game.categories.join(",") %>">

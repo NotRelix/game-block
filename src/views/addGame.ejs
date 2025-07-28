@@ -19,7 +19,7 @@
         <label for="description">Description</label>
         <textarea name="description" id="description"></textarea>
         <label for="price">Price</label>
-        <input type="text" name="price" id="price">
+        <input type="text" name="price" id="price" required>
         <label for="developer">Developer</label>
         <input type="text" name="developer" id="developer" list="developerList">
         <datalist id="developerList">
@@ -28,7 +28,7 @@
           <% }) %>
         </datalist>
         <label for="releaseDate">Release Date</label>
-        <input type="date" name="releaseDate" id="releaseDate">
+        <input type="date" name="releaseDate" id="releaseDate" required>
         <label for="image">Image</label>
         <input type="file" name="image" id="image" accept="image/*" required>
         <label for="category">Category</label>
