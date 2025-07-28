@@ -13,7 +13,7 @@
   <main>
     <div class="container">
       <h1 class="header">Edit Game</h1>
-      <form action="/games/add" method="post" enctype="multipart/form-data">
+      <form action="/games/<%= game.id %>/edit" method="post">
         <label for="name">Name</label>
         <input type="text" name="name" id="name" value="<%= game.name %>" required>
         <label for="description">Description</label>
@@ -29,8 +29,6 @@
         </datalist>
         <label for="releaseDate">Release Date</label>
         <input type="date" name="releaseDate" id="releaseDate" value="<%= game.release_date ? game.release_date.toISOString().split('T')[0] : '' %>">
-        <label for="image">Image</label>
-        <input type="file" name="image" id="image" accept="image/*" value="<%= game.image %>" required>
         <label for="category">Category</label>
         <input type="text" placeholder="Type and press Enter" id="category">
         <input type="hidden" name="categories" id="categories-hidden" value="<%= game.categories.join(",") %>">

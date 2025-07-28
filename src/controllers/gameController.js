@@ -7,6 +7,7 @@ const {
   getGame,
   getGameFromQuery,
   getDeveloperById,
+  editGameWithoutImage,
 } = require("../db/query");
 
 exports.gamesListGet = async (req, res) => {
@@ -37,7 +38,6 @@ exports.gameAddPost = async (req, res) => {
   const image = req.file?.buffer || null;
   let developerId;
   const filteredCategories = categories.split(",");
-  console.log(filteredCategories);
 
   const result = await getDeveloper(developer);
   if (result.length > 0) {
@@ -103,3 +103,27 @@ exports.gameEditGet = async (req, res) => {
     game: game,
   });
 };
+
+exports.gameEditPost = async (req, res) => {
+  const { id } = req.params;
+  const { name, description, price, developer, releaseDate, categories } =
+    req.body;
+  const filteredCategories = categories.split(",");
+  const result = await getDeveloper(developer);
+  let developerId;
+  if (result.length > 0) {
+    developerId = result[0].id;
+  } else {
+    developerId = await insertDeveloper(developer);
+  }
+  await editGameWithoutImage(
+    id,
+    name,
+    description,
+    price,
+    developerId,
+    releaseDate,
+    filteredCategories
+  );
+  res.redirect("/");
+}

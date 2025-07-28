@@ -66,6 +66,41 @@ async function insertGame(
   }
 }
 
+async function editGameWithoutImage(
+  id,
+  name,
+  description,
+  price,
+  developerId,
+  releaseDate,
+  categories
+) {
+  try {
+    await pool.query(
+      `
+      UPDATE games 
+      SET name = $1, description = $2, price = $3, developer_id = $4, release_date = $5
+      WHERE id = $6
+    `,
+      [name, description, price, developerId, releaseDate, id]
+    );
+
+    await pool.query(`
+      DELETE FROM game_category
+      WHERE game_id = $1 
+      AND category_id IN (
+        SELECT category_id FROM game_category
+        JOIN categories ON game_category.category_id = categories.id
+        WHERE game_id = $1
+      )
+    `, [id])
+
+    await insertWithCategories(id, categories);
+  } catch (err) {
+    console.error("Insert game without image failed: ", err);
+  }
+}
+
 async function getAllDevelopers() {
   try {
     const { rows } = await pool.query(
@@ -129,6 +164,7 @@ module.exports = {
   getGame,
   getGameFromQuery,
   insertGame,
+  editGameWithoutImage,
   getAllDevelopers,
   getDeveloper,
   getDeveloperById,
