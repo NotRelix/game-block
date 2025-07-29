@@ -32,7 +32,11 @@ CREATE TABLE IF NOT EXISTS game_category (
 async function main() {
   console.log("seeding...");
   const client = new Client({
-    connectionString: process.env.CONNECTION_STRING,
+    host: process.env.PGHOST,
+    user: process.env.PGUSER,
+    database: process.env.PGDATABASE,
+    password: process.env.PGPASSWORD,
+    port: process.env.PGPORT,
   });
   await client.connect();
   await client.query(SQL);
