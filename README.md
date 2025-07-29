@@ -2,8 +2,9 @@
 Find your favorite games here at Game Block
 
 ## Features
-- CRUD Functionality
-- Game Inventory Management System
+- CRUD functionality
+- Search games by name
+- Game inventory management system
 - Used Railway as the service provider
 - EJS for SSR
 
