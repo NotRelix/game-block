@@ -28,3 +28,11 @@ node src/db/populatedb.js     # Setup database schema
 node --watch src/app.js       # Run application at localhost:3000
 ```
 Replace `.env` values with your own
+
+## Bonus
+
+If you made it to the end congrats! 
+
+Here's the delete password for deleting games `loading`
+
+Use it responsibly 😉
